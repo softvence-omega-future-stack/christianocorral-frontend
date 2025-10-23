@@ -2,6 +2,7 @@
 type ProductFAQProps = {
   category: string;
   productId: string;
+  brand: string;
 };
 
 const productFAQs: Record<string, Record<string, { q: string; a: string }[]>> = {
@@ -21,14 +22,14 @@ const productFAQs: Record<string, Record<string, { q: string; a: string }[]>> = 
   },
 };
 
-export default function ProductFAQ({ category, productId }: ProductFAQProps) {
+export default function ProductFAQ({ category, productId, brand }: ProductFAQProps) {
   const faqs = productFAQs[category]?.[productId] || [];
 
   if (!faqs.length) return null;
 
   return (
     <div className="mt-10">
-      <h2 className="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
+      <h2 className="text-2xl font-semibold mb-4">Frequently Asked Questions for {brand}</h2>
       <div className="space-y-3">
         {faqs.map((item, idx) => (
           <div key={idx} className="border p-3 rounded">

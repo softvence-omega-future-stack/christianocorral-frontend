@@ -39,7 +39,13 @@ import Link from "next/link";
 export default function CellphoneCategoryPage() {
   // Extract brands from cellphone products
   const cellphoneProducts = products["cellphone"] || [];
-  const brands = Array.from(new Set(cellphoneProducts.map(p => p.brand)));
+  const brands = Array.from(
+    new Set(
+      cellphoneProducts
+        .map((p) => p.brand)
+        .filter((b): b is string => typeof b === "string" && b.length > 0)
+    )
+  );
 
   return (
     <div className="min-h-screen flex flex-col">

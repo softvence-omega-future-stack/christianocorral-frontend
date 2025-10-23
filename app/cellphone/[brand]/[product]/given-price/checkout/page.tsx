@@ -1,7 +1,6 @@
 "use client";
 
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import Image from "next/image";
 import { products } from "@/lib/data/products";
 import { useParams, useRouter } from "next/navigation";
 
@@ -9,19 +8,31 @@ export default function CheckoutPage() {
   const params = useParams();
   const router = useRouter();
 
-  const brand = params.brand?.toLowerCase() || "";
-  const productId = params.product?.toLowerCase() || "";
+  const brand =
+    typeof params.brand === "string"
+      ? params.brand.toLowerCase()
+      : Array.isArray(params.brand) && params.brand.length
+      ? params.brand[0].toLowerCase()
+      : "";
+
+  const productId =
+    typeof params.product === "string"
+      ? params.product.toLowerCase()
+      : Array.isArray(params.product) && params.product.length
+      ? params.product[0].toLowerCase()
+      : "";
 
   const product = (products["cellphone"] || []).find(
-    (p) => p.brand.toLowerCase() === brand && p.id === productId
+    (p) =>
+      typeof p.brand === "string" &&
+      p.brand.toLowerCase() === brand &&
+      p.id === productId
   );
 
   if (!product) return <div>Product not found</div>;
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
-
       {/* Checkout Header */}
       <div className="mt-20 px-6 lg:px-20 py-6 text-center">
         <h1 className="text-3xl font-bold">Checkout</h1>
@@ -42,8 +53,7 @@ export default function CheckoutPage() {
 
         {/* Right: Checkout summary */}
         <div className="w-full lg:w-80 border p-6 rounded-lg shadow-md">
-          <h2 className="text-2xl font-semibold mb-4">Checkout Summary</h2>
-          <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded mb-4" />
+          <Image src={product.image} alt={product.name} className="object-cover rounded mb-4" width={248} height={248}/>
           <p className="font-medium">{product.name}</p>
           <p className="text-gray-600 mb-4">Price: ${product.price}</p>
 
@@ -69,8 +79,6 @@ export default function CheckoutPage() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }

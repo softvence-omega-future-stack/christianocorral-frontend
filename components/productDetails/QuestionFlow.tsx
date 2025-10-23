@@ -20,7 +20,11 @@ export default function QuestionFlow({ product }: QuestionFlowProps) {
   };
 
   const handleContinue = () => {
+    if (product?.category === "cellphone" && product.brand) {
+    router.push(`/cellphone/${product.brand.toLowerCase()}/${product.id}/given-price`);
+  } else {
     router.push(`/${product.category}/${product.id}/given-price`);
+  }
   };
 
   return (

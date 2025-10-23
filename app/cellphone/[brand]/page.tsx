@@ -8,7 +8,8 @@ import { useParams } from "next/navigation";
 
 export default function BrandPage() {
   const params = useParams();
-  const brand = params.brand || "";
+  const brandParam = params.brand;
+  const brand = Array.isArray(brandParam) ? brandParam[0] : brandParam ?? "";
 
   // Get all models in cellphone category for this brand
   const cellphoneProducts = products["cellphone"] || [];

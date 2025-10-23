@@ -1,7 +1,5 @@
 "use client";
 
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import { products } from "@/lib/data/products";
 import { useParams, useRouter } from "next/navigation";
 
@@ -9,18 +7,30 @@ export default function PricePage() {
   const params = useParams();       // ✅ get brand and product
   const router = useRouter();       // ✅ for navigation
 
-  const brand = params.brand?.toLowerCase() || "";
-  const productId = params.product?.toLowerCase() || "";
+  const brandRaw = params.brand;
+  const brand =
+    typeof brandRaw === "string"
+      ? brandRaw.toLowerCase()
+      : Array.isArray(brandRaw) && brandRaw.length > 0
+      ? brandRaw[0].toLowerCase()
+      : "";
+
+  const productRaw = params.product;
+  const productId =
+    typeof productRaw === "string"
+      ? productRaw.toLowerCase()
+      : Array.isArray(productRaw) && productRaw.length > 0
+      ? productRaw[0].toLowerCase()
+      : "";
 
   const product = (products["cellphone"] || []).find(
-    (p) => p.brand.toLowerCase() === brand && p.id === productId
+    (p) => (p.brand ?? "").toLowerCase() === brand && p.id === productId
   );
 
   if (!product) return <div>Product not found</div>;
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
       <div className="mt-20 px-6 lg:px-20 py-10 text-center">
         <h1 className="text-3xl font-bold mb-2">{product.name}</h1>
         <p className="text-gray-600 mb-6">Calculated Price: ${product.price}</p>
@@ -48,7 +58,6 @@ export default function PricePage() {
           </button>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

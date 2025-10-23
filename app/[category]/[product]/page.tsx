@@ -43,7 +43,7 @@
 import CategoryHeader from "@/components/product/CategoryHeader";
 import ModelCard from "@/components/productDetails/ModelCard";
 import QuestionFlow from "@/components/productDetails/QuestionFlow";
-import ProductFAQ from "@/components/faq/ProductFAQ";
+// import ProductFAQ from "@/components/faq/ProductFAQ";
 import FAQSection from "@/components/faq/FAQSection";
 // import Partners from "@/components/homepage/Partners";
 import { products, Product } from "@/lib/data/products";
@@ -82,7 +82,7 @@ export default async function ProductPage({ params }: Props) {
         <ModelCard product={product} />
         <QuestionFlow product={product} />
 
-        <ProductFAQ category={product.category ?? ""} productId={product.id} />
+        {/* <ProductFAQ category={product.category ?? ""} productId={product.id} /> */}
         <FAQSection />
         {/* <Partners /> */}
       </div>
