@@ -56,7 +56,7 @@ export default function CellphoneCategoryPage() {
           {brands.map((brand) => (
             <Link
               key={brand}
-              href={`/cellphone/${brand.toLowerCase()}`}
+              href={`/category/cellphone/${brand.toLowerCase()}`}
               className="p-4 border rounded-lg text-center hover:shadow-lg transition"
             >
               {brand}

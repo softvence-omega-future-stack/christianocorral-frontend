@@ -13,7 +13,7 @@ export default function CategoryGrid() {
           {categories.map((cat) => (
             <Link
               key={cat.slug}
-              href={`/${cat.slug}`}
+              href={`/category/${cat.slug}`}
               className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition"
             >
               <Image

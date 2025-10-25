@@ -29,7 +29,7 @@ export default function PricePage() {
         <div className="flex justify-center gap-4 flex-wrap">
           <button
             className="px-6 py-3 bg-green-500 text-white rounded"
-            onClick={() => router.push(`/${category}/${product.id}/given-price/checkout`)}
+            onClick={() => router.push(`/category/${category}/${product.id}/given-price/checkout`)}
           >
             Check Out
           </button>

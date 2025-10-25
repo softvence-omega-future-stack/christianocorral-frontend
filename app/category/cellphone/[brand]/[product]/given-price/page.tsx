@@ -39,7 +39,7 @@ export default function PricePage() {
           <button
             className="px-6 py-3 bg-green-500 text-white rounded"
             onClick={() =>
-              router.push(`/cellphone/${brand}/${product.id}/given-price/checkout`)
+              router.push(`/category/cellphone/${brand}/${product.id}/given-price/checkout`)
             }
           >
             Check Out

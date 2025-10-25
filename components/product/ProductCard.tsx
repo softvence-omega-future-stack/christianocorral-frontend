@@ -17,9 +17,9 @@ export default function ProductCard({ id, name, image, category, brand }: Produc
   const handleClick = () => {
   console.log("category", category, "brand", brand, "id", id);
   if (category.toLowerCase() === "cellphone" && brand) {
-    router.push(`/cellphone/${brand.toLowerCase()}/${id}`);
+    router.push(`/category/cellphone/${brand.toLowerCase()}/${id}`);
   } else {
-    router.push(`/${category.toLowerCase()}/${id}`);
+    router.push(`/category/${category.toLowerCase()}/${id}`);
   }
 };
 

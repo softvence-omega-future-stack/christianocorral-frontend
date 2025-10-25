@@ -21,10 +21,10 @@ export default function QuestionFlow({ product }: QuestionFlowProps) {
 
   const handleContinue = () => {
     if (product?.category === "cellphone" && product.brand) {
-    router.push(`/cellphone/${product.brand.toLowerCase()}/${product.id}/given-price`);
-  } else {
-    router.push(`/${product.category}/${product.id}/given-price`);
-  }
+      router.push(`/category/cellphone/${product.brand.toLowerCase()}/${product.id}/given-price`);
+    } else {
+      router.push(`/category/${product.category}/${product.id}/given-price`);
+    }
   };
 
   return (

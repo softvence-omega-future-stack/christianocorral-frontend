@@ -37,7 +37,7 @@ export default function Navbar() {
                 {categories.map((cat) => (
                   <Link
                     key={cat}
-                    href={`/${cat}`}
+                    href={`/category/${cat}`}
                     className="block px-4 py-2 hover:bg-gray-100 capitalize"
                   >
                     {cat}
@@ -93,7 +93,7 @@ export default function Navbar() {
                   {categories.map((cat) => (
                     <Link
                       key={cat}
-                      href={`/${cat}`}
+                      href={`/category/${cat}`}
                       className="block hover:text-blue-600 capitalize"
                     >
                       {cat}
