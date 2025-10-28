@@ -1,44 +1,61 @@
-// components/layout/Navbar.tsx
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { Menu, X, ShoppingCart } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Menu, X, ShoppingCart, ChevronDown } from "lucide-react";
 import Wrapper from "./Wrapper";
 
-const categories = ["iphone", "ipad", "macbook", "laptop"];
+const categories = ["iphone", "ipad", "macbook", "laptop", "apple_watch", "cellphone"];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sellOpen, setSellOpen] = useState(false);
+  const sellRef = useRef<HTMLDivElement | null>(null);
+
+  // 🟩 Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (sellRef.current && !sellRef.current.contains(e.target as Node)) {
+        setSellOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
-    <nav className="bg-white shadow-md fixed top-0 w-full z-50">
-      <Wrapper className="flex justify-between items-center h-16">
+    <nav className="bg-[#0F3290] shadow-md fixed top-0 w-full z-50">
+      <Wrapper className="flex justify-between items-center h-24">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-blue-600">
-          SmartShop
+        <Link href="/" className="text-2xl font-bold text-white flex items-center z-50 hover:scale-[1.05] transition">
+          <img src="/logo.png" alt="Logo" className="h-12 w-28 mr-2" />
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-8">
-          <Link href="/" className="hover:text-blue-600 transition">
+        <div className="hidden md:flex items-center space-x-8 text-white">
+          <Link href="/" className="hover:scale-[1.2] transition">
             Home
           </Link>
 
-          <div
-            className="relative"
-            onMouseEnter={() => setSellOpen(true)}
-            onMouseLeave={() => setSellOpen(false)}
-          >
-            <button className="hover:text-blue-600 transition">Sell</button>
+          {/* Sell Dropdown (Click-based) */}
+          <div className="relative" ref={sellRef}>
+            <button
+              className="hover:scale-[1.2] transition"
+              onClick={() => setSellOpen((prev) => !prev)}
+            >
+              Sell<ChevronDown size={20} className="inline-block" />
+            </button>
+
             {sellOpen && (
-              <div className="absolute left-0 top-8 bg-white border rounded-lg shadow-lg w-48">
+              <div
+                className="absolute left-[-20] top-13 bg-white border rounded-lg shadow-lg w-48 animate-fadeIn"
+              >
                 {categories.map((cat) => (
                   <Link
                     key={cat}
                     href={`/category/${cat}`}
-                    className="block px-4 py-2 hover:bg-gray-100 capitalize"
+                    onClick={() => setSellOpen(false)}
+                    className="block px-4 py-2 hover:text-blue-500 capitalize text-gray-700 transition"
                   >
                     {cat}
                   </Link>
@@ -47,26 +64,30 @@ export default function Navbar() {
             )}
           </div>
 
-          <Link href="/faq" className="hover:text-blue-600 transition">
+          <Link href="/faq" className="hover:scale-[1.2] transition">
             FAQ
           </Link>
-          <Link href="/contact" className="hover:text-blue-600 transition">
+          <Link href="/contact" className="hover:scale-[1.2] transition">
             Contact
           </Link>
 
-          <Link href="/cart" className="flex items-center gap-1 hover:text-blue-600 transition">
+          <Link href="/cart" className="flex items-center gap-1 hover:scale-[1.2] transition">
             <ShoppingCart size={20} />
             Cart
           </Link>
 
-          <Link href="/login" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+          <Link
+            href="/login"
+            className="bg-[#0E2E83] text-white px-4 py-2 hover:scale-[1.05] transition border hover:shadow-2xl rounded-full flex items-center"
+          >
+            <img src="/login/user-circle.svg" alt="Login" className="h-5 w-5 inline-block mr-2" />
             Login
           </Link>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-800"
+          className="md:hidden text-white z-50"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -81,12 +102,13 @@ export default function Navbar() {
               Home
             </Link>
 
+            {/* Mobile Sell */}
             <div>
               <button
                 onClick={() => setSellOpen(!sellOpen)}
                 className="hover:text-blue-600 transition"
               >
-                Sell
+                Sell 
               </button>
               {sellOpen && (
                 <div className="ml-4 mt-1 space-y-1">
@@ -95,6 +117,10 @@ export default function Navbar() {
                       key={cat}
                       href={`/category/${cat}`}
                       className="block hover:text-blue-600 capitalize"
+                      onClick={() => {
+                        setSellOpen(false);
+                        setMenuOpen(false);
+                      }}
                     >
                       {cat}
                     </Link>

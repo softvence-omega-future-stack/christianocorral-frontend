@@ -7,7 +7,7 @@ import FullWidthImage from "@/components/homepage/FullwidthImage";
 import CustomerExperiences from "@/components/homepage/CustomerReviews";
 import WhyUs from "@/components/homepage/WhyUs";
 import SubscribeSection from "@/components/homepage/SubscribeSection";
-// import TopCompanies from "@/components/homepage/TopCompanies";
+import TopCompanies from "@/components/homepage/TopCompanies";
 
 export default function HomePage() {
   return (
@@ -20,7 +20,7 @@ export default function HomePage() {
       <CustomerExperiences />
       <WhyUs />
       <SubscribeSection />
-      {/* <TopCompanies /> */}
+      <TopCompanies />
     </main>
   );
 }

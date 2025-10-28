@@ -18,19 +18,19 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-[#0F3290] text-white">
       <Wrapper>
         <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
         <div className="grid md:grid-cols-3 gap-10">
           {steps.map((step, idx) => (
             <div
               key={idx}
-              className="text-center border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition"
+              className="text-center border bg-[#E7EBF4] border-gray-300 rounded-xl p-6 shadow-sm hover:shadow-md transition"
             >
-              <div className="text-blue-600 text-2xl font-bold mb-3">
-                {idx + 1}
+              <div className="text-2xl font-bold mb-3 text-black">
+                0{idx + 1}
               </div>
-              <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+              <h3 className="text-xl font-semibold mb-2 text-[#161C24]">{step.title}</h3>
               <p className="text-gray-600">{step.desc}</p>
             </div>
           ))}

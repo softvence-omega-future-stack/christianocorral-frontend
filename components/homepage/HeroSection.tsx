@@ -14,19 +14,18 @@ export default function HeroSection() {
   };
 
   return (
-    <div
-      className="relative bg-cover bg-center h-[80vh] flex items-center"
-      style={{
-        backgroundImage: "url('/images/hero-bg.jpg')",
-      }}
-    >
-      <div className="absolute inset-0 bg-black bg-opacity-40" />
+   <div
+  className="relative bg-cover bg-center w-full h-[80vh] flex items-center"
+  style={{ backgroundImage: "url('/home/main.png')" }}
+>
+
+      <div className="absolute inset-0 bg-opacity-40" />
       <Wrapper className="relative z-10 text-center text-white">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
-          Welcome to SmartShop
+          Welcome to PerfectPhone
         </h1>
         <p className="text-lg md:text-xl mb-6">
-          Buy and sell your Apple devices easily and securely
+          sell your devices easily and securely
         </p>
 
         <form
@@ -42,9 +41,9 @@ export default function HeroSection() {
           />
           <button
             type="submit"
-            className="bg-blue-600 text-white p-2 rounded-full"
+            className="bg-[#0F3290] text-white p-2 rounded-full"
           >
-            <Search size={20} />
+            <Search size={22} />
           </button>
         </form>
       </Wrapper>
