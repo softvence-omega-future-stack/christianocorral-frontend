@@ -1,7 +1,5 @@
 "use client";
 
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import ModelCard from "@/components/productDetails/ModelCard";
 import QuestionFlow from "@/components/productDetails/QuestionFlow";
 import { products } from "@/lib/data/products";
@@ -34,7 +32,6 @@ export default function ProductPage() {
 
   return (
     <div className="min-h-screen">
-      <Navbar />
       <div className="mt-20 px-6 lg:px-20 py-10">
         <h1 className="text-3xl font-bold mb-4">
           Sell your {brand} {product.name}
@@ -43,7 +40,6 @@ export default function ProductPage() {
         <ModelCard product={product} />
         <QuestionFlow product={product} />
       </div>
-      <Footer />
     </div>
   );
 }

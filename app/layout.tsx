@@ -17,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="pt-16 bg-gray-50">
+    <html lang="en" suppressHydrationWarning>
+      <body className="pt-16 bg-gray-50" suppressHydrationWarning>
         <Providers>
           <Navbar />
           {children}

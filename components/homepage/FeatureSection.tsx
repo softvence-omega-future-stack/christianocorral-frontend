@@ -15,7 +15,7 @@ export default function FeatureSection() {
       {features.map((item) => (
         <div
           key={item}
-          className="bg-white border-x-4 border-x-[#0F3290] rounded-xl p-6 flex flex-col items-center justify-center hover:shadow-xl transition"
+          className="bg-white border border-gray-50 shadow-md rounded-xl p-6 flex flex-col items-center justify-center hover:shadow-xl transition"
         >
           <CheckCircle className="text-[#0F3290] mb-3" size={30} />
           <h3 className="font-semibold text-gray-700">{item}</h3>

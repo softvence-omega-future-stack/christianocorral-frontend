@@ -123,14 +123,14 @@ export default function CustomerExperiences() {
           <div className="flex justify-center gap-3 mt-6 md:mt-8">
             <button
               onClick={prev}
-              className="bg-white p-2 border border-gray-300 hover:border-[#0F3290] rounded-full hover:scale-105 transition-colors duration-200"
+              className="bg-white p-2 border-2 border-gray-300 hover:border-[#0F3290] rounded-full hover:scale-105 transition-colors duration-200"
               aria-label="Previous"
             >
               <ChevronLeft size={20} className="text-gray-300 hover:text-[#0F3290]" />
             </button>
             <button
               onClick={next}
-              className="bg-white p-2 border border-gray-300 hover:border-[#0F3290] rounded-full hover:scale-105 transition-colors duration-200"
+              className="bg-white p-2 border-2 border-gray-300 hover:border-[#0F3290] rounded-full hover:scale-105 transition-colors duration-200"
               aria-label="Next"
             >
               <ChevronRight size={20} className="text-gray-300 hover:text-[#0F3290]" />

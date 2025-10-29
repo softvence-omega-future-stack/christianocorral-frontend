@@ -18,17 +18,22 @@ export const products: Record<string, Product[]> = {
     { id: "pixel-6a", name: "Pixel 6a", category: "cellphone", image: "/products/download.jpeg", price: 449, brand: "Google" },
     { id: "oneplus-12", name: "OnePlus 12", category: "cellphone", image: "/products/download.jpeg", price: 699, brand: "OnePlus" },
     { id: "oneplus-11", name: "OnePlus 11", category: "cellphone", image: "/products/download.jpeg", price: 649, brand: "OnePlus" },
-    { id: "xiaomi-14-ultra", name: "Xiaomi 14 Ultra", category: "cellphone", image: "/products/download.jpeg", price: 749, brand: "Xiaomi" },
-    { id: "xiaomi-13-pro", name: "Xiaomi 13 Pro", category: "cellphone", image: "/products/download.jpeg", price: 699, brand: "Xiaomi" },
-    { id: "realme-12-pro", name: "Realme 12 Pro", category: "cellphone", image: "/products/download.jpeg", price: 499, brand: "Realme" },
     { id: "oppo-find-x6", name: "Oppo Find X6", category: "cellphone", image: "/products/download.jpeg", price: 599, brand: "Oppo" },
+    { id: "oppo-reno-10", name: "Oppo Reno 10", category: "cellphone", image: "/products/download.jpeg", price: 499, brand: "Oppo" },
+    { id: "nothing-phone-2", name: "Nothing Phone 2", category: "cellphone", image: "/products/download.jpeg", price: 449, brand: "Nothing" },
+    { id: "nothing-phone-1", name: "Nothing Phone 1", category: "cellphone", image: "/products/download.jpeg", price: 399, brand: "Nothing" },
+    { id: "huawei-p50-pro", name: "Huawei P50 Pro", category: "cellphone", image: "/products/download.jpeg", price: 699, brand: "Huawei" },
+    { id: "huawei-mate-40", name: "Huawei Mate 40", category: "cellphone", image: "/products/download.jpeg", price: 599, brand: "Huawei" },
     { id: "vivo-x90", name: "Vivo X90", category: "cellphone", image: "/products/download.jpeg", price: 549, brand: "Vivo" },
     { id: "motorola-edge-40", name: "Motorola Edge 40", category: "cellphone", image: "/products/download.jpeg", price: 449, brand: "Motorola" },
     { id: "sony-xperia-1-vi", name: "Sony Xperia 1 VI", category: "cellphone", image: "/products/download.jpeg", price: 999, brand: "Sony" },
     { id: "asus-rog-phone-7", name: "ASUS ROG Phone 7", category: "cellphone", image: "/products/download.jpeg", price: 799, brand: "ASUS" },
     { id: "nokia-x20", name: "Nokia X20", category: "cellphone", image: "/products/download.jpeg", price: 399, brand: "Nokia" },
     { id: "tecno-camon-20", name: "Tecno Camon 20", category: "cellphone", image: "/products/download.jpeg", price: 299, brand: "Tecno" },
-    { id: "itel-p37", name: "Itel P37", category: "cellphone", image: "/products/download.jpeg", price: 199, brand: "Itel" },
+    { id: "htc-u20", name: "HTC U20", category: "cellphone", image: "/products/download.jpeg", price: 349, brand: "HTC" },
+    { id: "microsoft-surface-duo-2", name: "Microsoft Surface Duo 2", category: "cellphone", image: "/products/download.jpeg", price: 999, brand: "Microsoft" },
+    { id: "lg-wing", name: "LG Wing", category: "cellphone", image: "/products/download.jpeg", price: 499, brand: "LG" },
+    { id: "zte-axon-40", name: "ZTE Axon 40", category: "cellphone", image: "/products/download.jpeg", price: 399, brand: "ZTE" }
   ],
 
   // -------------------- iPhones --------------------
@@ -85,17 +90,17 @@ export const products: Record<string, Product[]> = {
     { id: "macbook-pro-16-m2", name: "MacBook Pro 16\" M2", category: "macbook", image: "/products/download.jpeg", price: 2499, brand: "Apple" }
   ],
 
-  // -------------------- Laptops (Other brands) --------------------
-  laptop: [
-    { id: "dell-xps-13", name: "Dell XPS 13", category: "laptop", image: "/products/download.jpeg", price: 1099, brand: "Dell" },
-    { id: "dell-xps-15", name: "Dell XPS 15", category: "laptop", image: "/products/download.jpeg", price: 1299, brand: "Dell" },
-    { id: "hp-spectre-x360", name: "HP Spectre x360", category: "laptop", image: "/products/download.jpeg", price: 1199, brand: "HP" },
-    { id: "hp-envy-13", name: "HP Envy 13", category: "laptop", image: "/products/download.jpeg", price: 999, brand: "HP" },
-    { id: "lenovo-yoga-9i", name: "Lenovo Yoga 9i", category: "laptop", image: "/products/download.jpeg", price: 1399, brand: "Lenovo" },
-    { id: "lenovo-legion-5", name: "Lenovo Legion 5", category: "laptop", image: "/products/download.jpeg", price: 1299, brand: "Lenovo" },
-    { id: "asus-rog-7", name: "ASUS ROG 7", category: "laptop", image: "/products/download.jpeg", price: 1499, brand: "ASUS" },
-    { id: "acer-predator-15", name: "Acer Predator 15", category: "laptop", image: "/products/download.jpeg", price: 1399, brand: "Acer" }
-  ],
+  // // -------------------- Laptops (Other brands) --------------------
+  // laptop: [
+  //   { id: "dell-xps-13", name: "Dell XPS 13", category: "laptop", image: "/products/download.jpeg", price: 1099, brand: "Dell" },
+  //   { id: "dell-xps-15", name: "Dell XPS 15", category: "laptop", image: "/products/download.jpeg", price: 1299, brand: "Dell" },
+  //   { id: "hp-spectre-x360", name: "HP Spectre x360", category: "laptop", image: "/products/download.jpeg", price: 1199, brand: "HP" },
+  //   { id: "hp-envy-13", name: "HP Envy 13", category: "laptop", image: "/products/download.jpeg", price: 999, brand: "HP" },
+  //   { id: "lenovo-yoga-9i", name: "Lenovo Yoga 9i", category: "laptop", image: "/products/download.jpeg", price: 1399, brand: "Lenovo" },
+  //   { id: "lenovo-legion-5", name: "Lenovo Legion 5", category: "laptop", image: "/products/download.jpeg", price: 1299, brand: "Lenovo" },
+  //   { id: "asus-rog-7", name: "ASUS ROG 7", category: "laptop", image: "/products/download.jpeg", price: 1499, brand: "ASUS" },
+  //   { id: "acer-predator-15", name: "Acer Predator 15", category: "laptop", image: "/products/download.jpeg", price: 1399, brand: "Acer" }
+  // ],
 
   // -------------------- iPads --------------------
   ipad: [

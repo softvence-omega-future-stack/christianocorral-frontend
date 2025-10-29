@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import { Menu, X, ShoppingCart, ChevronDown } from "lucide-react";
 import Wrapper from "./Wrapper";
 
-const categories = ["iphone", "ipad", "macbook", "laptop", "apple_watch", "cellphone"];
+const categories = ["iphone", "ipad", "macbook", "apple_watch", "cellphone"];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
