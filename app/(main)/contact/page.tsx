@@ -4,7 +4,7 @@ import Subscribe from "@/components/homepage/SubscribeSection";
 export default function ContactPage() {
   return (
     <div>
-      <div className="mt-20">
+      <div className="">
         <ContactSection />
         <Subscribe />
       </div>

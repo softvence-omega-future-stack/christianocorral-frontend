@@ -216,7 +216,7 @@ export default function FAQPage() {
               Questions? Look here.
             </h1>
             <p className="text-base sm:text-lg text-gray-700">
-              Can't find the answer you're looking for? Reach out to our customer support team.
+              Can&#39;t find the answer you&#39;re looking for? Reach out to our customer support team.
             </p>
           </div>
         </div>

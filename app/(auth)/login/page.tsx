@@ -10,54 +10,62 @@
 
 "use client";
 
-import { useState } from 'react';
+import { useState } from "react";
+import Image from "next/image";
 
 export default function AuthPages() {
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    confirmPassword: ''
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = () => {
     if (isLogin) {
-      console.log('Login:', formData);
-      alert('Login submitted!');
+      console.log("Login:", formData);
+      alert("Login submitted!");
     } else {
-      console.log('Register:', formData);
-      alert('Registration submitted!');
+      console.log("Register:", formData);
+      alert("Registration submitted!");
     }
   };
 
   return (
     <div className="min-h-screen flex">
       {/* Left Side - Image */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gray-100 items-center justify-center p-8">
-        <div className="max-w-md w-full">
-          {isLogin ? (
-            <img
-              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&auto=format&fit=crop"
-              alt="Professional man with phone"
-              className="w-full h-auto rounded-lg shadow-lg object-cover"
-            />
-          ) : (
-            <img
-              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&auto=format&fit=crop"
-              alt="Two people with tablet and phone"
-              className="w-full h-auto rounded-lg shadow-lg object-cover"
-            />
-          )}
-        </div>
-      </div>
+      
+
+<div className="hidden lg:flex lg:w-1/2 bg-gray-100 items-center justify-center p-0">
+  <div className="relative w-full h-full">
+    {isLogin ? (
+      <Image
+        src="/login/login.png"
+        alt="login"
+        fill
+        className="object-cover rounded-none"
+        priority
+      />
+    ) : (
+      <Image
+        src="/login/register.png"
+        alt="Two people with tablet and phone"
+        fill
+        className="object-cover rounded-none"
+        priority
+      />
+    )}
+  </div>
+</div>
+
 
       {/* Right Side - Form */}
       <div className="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-8 lg:p-12 bg-white">
@@ -65,17 +73,17 @@ export default function AuthPages() {
           {/* Header */}
           <div className="text-center mb-8">
             <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-              {isLogin ? 'Log In' : 'Register'}
+              {isLogin ? "Log In" : "Register"}
             </h1>
-            
+
             {/* Toggle Buttons */}
             <div className="inline-flex rounded-full bg-gray-100 p-1">
               <button
                 onClick={() => setIsLogin(true)}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
                   isLogin
-                    ? 'bg-gray-900 text-white'
-                    : 'bg-transparent text-gray-600 hover:text-gray-900'
+                    ? "bg-gray-900 text-white"
+                    : "bg-transparent text-gray-600 hover:text-gray-900"
                 }`}
               >
                 Log In
@@ -84,8 +92,8 @@ export default function AuthPages() {
                 onClick={() => setIsLogin(false)}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
                   !isLogin
-                    ? 'bg-gray-900 text-white'
-                    : 'bg-transparent text-gray-600 hover:text-gray-900'
+                    ? "bg-gray-900 text-white"
+                    : "bg-transparent text-gray-600 hover:text-gray-900"
                 }`}
               >
                 Register
@@ -126,7 +134,7 @@ export default function AuthPages() {
             <div>
               <div className="relative">
                 <input
-                  type={showPassword ? 'text' : 'password'}
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   value={formData.password}
                   onChange={handleInputChange}
@@ -139,7 +147,12 @@ export default function AuthPages() {
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
                 >
                   {showPassword ? (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -148,7 +161,12 @@ export default function AuthPages() {
                       />
                     </svg>
                   ) : (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -172,7 +190,7 @@ export default function AuthPages() {
               <div>
                 <div className="relative">
                   <input
-                    type={showPassword ? 'text' : 'password'}
+                    type={showPassword ? "text" : "password"}
                     name="confirmPassword"
                     value={formData.confirmPassword}
                     onChange={handleInputChange}
@@ -185,7 +203,12 @@ export default function AuthPages() {
                     className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
                   >
                     {showPassword ? (
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
@@ -194,7 +217,12 @@ export default function AuthPages() {
                         />
                       </svg>
                     ) : (
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
@@ -217,7 +245,10 @@ export default function AuthPages() {
             {/* Forgot Password - Only for Login */}
             {isLogin && (
               <div className="text-right">
-                <a href="#" className="text-sm text-red-500 hover:text-red-600 font-medium">
+                <a
+                  href="/forgot-password"
+                  className="text-sm text-red-500 hover:text-red-600 font-medium"
+                >
                   Forgot Password?
                 </a>
               </div>
@@ -226,9 +257,9 @@ export default function AuthPages() {
             {/* Submit Button */}
             <button
               onClick={handleSubmit}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors mt-6"
+              className="w-full bg-[#0F3290] hover:bg-[#0D2A6D] text-white font-medium py-3 px-4 rounded-lg transition-colors mt-6"
             >
-              {isLogin ? 'Log In' : 'Register'}
+              {isLogin ? "Log In" : "Register"}
             </button>
           </div>
 
@@ -236,7 +267,7 @@ export default function AuthPages() {
           <div className="mt-6 text-center text-sm text-gray-600">
             {isLogin ? (
               <p>
-                Don't have an account?{' '}
+                Don&apos;t have an account?{" "}
                 <button
                   onClick={() => setIsLogin(false)}
                   className="text-blue-600 hover:text-blue-700 font-medium"
@@ -246,7 +277,7 @@ export default function AuthPages() {
               </p>
             ) : (
               <p>
-                Already have an account?{' '}
+                Already have an account?{" "}
                 <button
                   onClick={() => setIsLogin(true)}
                   className="text-blue-600 hover:text-blue-700 font-medium"
