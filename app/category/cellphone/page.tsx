@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { brands } from "@/lib/data/categories"; 
 import TopCompanies from "@/components/homepage/TopCompanies";
+import FAQComponent from "@/components/faq/FAQComponent";
 
 export default function CellphoneCategoryPage() {
   return (
@@ -36,8 +37,9 @@ export default function CellphoneCategoryPage() {
             </Link>
           ))}
         </div>
-        <TopCompanies />
       </div>
+        <FAQComponent brand="cellphone" title="Cellphone FAQs" />
+        <TopCompanies />
     </div>
   );
 }

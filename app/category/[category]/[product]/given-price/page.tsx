@@ -1,5 +1,6 @@
 "use client";
 
+import FAQComponent from "@/components/faq/FAQComponent";
 import { products } from "@/lib/data/products";
 import { useRouter, useParams } from "next/navigation";
 
@@ -47,6 +48,7 @@ export default function PricePage() {
           </button>
         </div>
       </div>
+      <FAQComponent brand={category} title={`${category.toUpperCase()} FAQs`} />
     </div>
   );
 }

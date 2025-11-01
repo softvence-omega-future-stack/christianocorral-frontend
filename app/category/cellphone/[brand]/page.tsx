@@ -4,6 +4,7 @@ import ProductGrid from "@/components/product/ProductGrid";
 import { products } from "@/lib/data/products";
 import { useParams } from "next/navigation";
 import CategoryHeader from "@/components/product/CategoryHeader";
+import FAQComponent from "@/components/faq/FAQComponent";
 
 export default function BrandPage() {
   const params = useParams();
@@ -29,7 +30,9 @@ export default function BrandPage() {
             ) : (
               <p className="text-center text-gray-500">No products found.</p>
             )}
+
           </div>
+            <FAQComponent brand={brand} title={`${brand.toUpperCase()} FAQs`} />
         </div>
     
   );

@@ -1,5 +1,6 @@
 "use client";
 
+import FAQComponent from "@/components/faq/FAQComponent";
 import ModelCard from "@/components/productDetails/ModelCard";
 import QuestionFlow from "@/components/productDetails/QuestionFlow";
 import { products } from "@/lib/data/products";
@@ -40,6 +41,7 @@ export default function ProductPage() {
         <ModelCard product={product} />
         <QuestionFlow product={product} />
       </div>
+      <FAQComponent brand={brand} title={`${brand.toUpperCase()} FAQs`} />
     </div>
   );
 }

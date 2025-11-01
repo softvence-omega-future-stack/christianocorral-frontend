@@ -79,6 +79,7 @@ import { notFound } from "next/navigation";
 import CategoryHeader from "@/components/product/CategoryHeader";
 import ProductGrid from "@/components/product/ProductGrid";
 import { products } from "@/lib/data/products";
+import FAQComponent from "@/components/faq/FAQComponent";
 
 type Props = {
   params: Promise<{ category: string }>;
@@ -111,6 +112,7 @@ export default async function CategoryPage({ params }: Props) {
 
         
       </div>
+      <FAQComponent brand={lowerCategory} title={`${lowerCategory.toUpperCase()} FAQs`} />
     </div>
   );
 }

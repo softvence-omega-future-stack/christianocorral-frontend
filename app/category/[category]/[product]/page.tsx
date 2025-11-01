@@ -47,6 +47,7 @@ import QuestionFlow from "@/components/productDetails/QuestionFlow";
 import FAQSection from "@/components/faq/FAQSection";
 // import Partners from "@/components/homepage/Partners";
 import { products, Product } from "@/lib/data/products";
+import FAQComponent from "@/components/faq/FAQComponent";
 
 type Props = { params: Promise<{ category: string; product: string }> };
 
@@ -81,11 +82,8 @@ export default async function ProductPage({ params }: Props) {
 
         <ModelCard product={product} />
         <QuestionFlow product={product} />
-
-        {/* <ProductFAQ category={product.category ?? ""} productId={product.id} /> */}
-        <FAQSection />
-        {/* <Partners /> */}
       </div>
+      <FAQComponent brand={lowerCategory} title={`${categoryName} FAQs`} />
 
     </div>
   );
