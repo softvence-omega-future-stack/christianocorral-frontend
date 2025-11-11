@@ -3,18 +3,20 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { brands } from "@/lib/data/categories"; 
+import { brands } from "@/lib/data/categories";
 import TopCompanies from "@/components/homepage/TopCompanies";
 import FAQComponent from "@/components/faq/FAQComponent";
+import Wrapper from "@/components/layout/Wrapper";
 
 export default function CellphoneCategoryPage() {
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="px-6 lg:px-20 mt-20 py-10">
+        <div className="mt-20 py-10">
         <h1 className="text-3xl text-center font-bold mb-8 text-gray-900">
           Select a Brand to Sell Your Cellphone
         </h1>
 
+      <Wrapper>
         <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6">
           {brands.map((brand) => (
             <Link
@@ -37,9 +39,10 @@ export default function CellphoneCategoryPage() {
             </Link>
           ))}
         </div>
+      </Wrapper>
       </div>
-        <FAQComponent brand="cellphone" title="Cellphone FAQs" />
-        <TopCompanies />
+      <FAQComponent brand="cellphone" title="Cellphone FAQs" />
+      <TopCompanies />
     </div>
   );
 }

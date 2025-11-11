@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, ShoppingCart, ChevronDown } from "lucide-react";
 import Wrapper from "./Wrapper";
+import Image from "next/image";
 
 const categories = ["iphone", "ipad", "macbook", "apple_watch", "cellphone"];
 
@@ -27,8 +28,17 @@ export default function Navbar() {
     <nav className="bg-[#0F3290] shadow-md fixed top-0 w-full z-50">
       <Wrapper className="flex justify-between items-center h-24">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-white flex items-center z-50 hover:scale-[1.05] transition">
-          <img src="/logo.png" alt="Logo" className="h-12 w-28 mr-2" />
+        <Link
+          href="/"
+          className="text-2xl font-bold text-white flex items-center z-50 hover:scale-[1.05] transition"
+        >
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            className="mr-2"
+            width={112}
+            height={48}
+          />
         </Link>
 
         {/* Desktop Menu */}
@@ -43,13 +53,12 @@ export default function Navbar() {
               className="hover:scale-[1.2] transition"
               onClick={() => setSellOpen((prev) => !prev)}
             >
-              Sell<ChevronDown size={20} className="inline-block" />
+              Sell
+              <ChevronDown size={20} className="inline-block" />
             </button>
 
             {sellOpen && (
-              <div
-                className="absolute left-[-20] top-13 bg-white border rounded-lg shadow-lg w-48 animate-fadeIn"
-              >
+              <div className="absolute left-[-20] top-13 bg-white border rounded-lg shadow-lg w-48 animate-fadeIn">
                 {categories.map((cat) => (
                   <Link
                     key={cat}
@@ -57,7 +66,7 @@ export default function Navbar() {
                     onClick={() => setSellOpen(false)}
                     className="block px-4 py-2 hover:text-blue-500 capitalize text-gray-700 transition"
                   >
-                    {cat}
+                    {cat.replace(/_/g, " ")}
                   </Link>
                 ))}
               </div>
@@ -71,7 +80,10 @@ export default function Navbar() {
             Contact
           </Link>
 
-          <Link href="/cart" className="flex items-center gap-1 hover:scale-[1.2] transition">
+          <Link
+            href="/cart"
+            className="flex items-center gap-1 hover:scale-[1.2] transition"
+          >
             <ShoppingCart size={20} />
             Cart
           </Link>
@@ -80,7 +92,13 @@ export default function Navbar() {
             href="/login"
             className="bg-[#0E2E83] text-white px-4 py-2 hover:scale-[1.05] transition border hover:shadow-2xl rounded-full flex items-center"
           >
-            <img src="/login/user-circle.svg" alt="Login" className="h-5 w-5 inline-block mr-2" />
+            <Image
+              src="/login/user-circle.svg"
+              alt="Login"
+              className="inline-block mr-2"
+              width={22}
+              height={22}
+            />
             Login
           </Link>
         </div>
@@ -108,7 +126,7 @@ export default function Navbar() {
                 onClick={() => setSellOpen(!sellOpen)}
                 className="hover:text-blue-600 transition"
               >
-                Sell 
+                Sell
               </button>
               {sellOpen && (
                 <div className="ml-4 mt-1 space-y-1">

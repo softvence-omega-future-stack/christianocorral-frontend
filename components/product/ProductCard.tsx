@@ -26,7 +26,7 @@ export default function ProductCard({ id, name, image, category, brand }: Produc
   return (
     <div
       onClick={handleClick}
-      className="group flex flex-col items-center justify-center rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 bg-white border border-gray-200 p-4"
+      className="group flex flex-col items-center justify-center rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300 bg-white border border-gray-200 p-4"
     >
       <div className="flex items-center justify-center relative w-55 h-44 md:h-62 lg:h-70">
         <Image

@@ -48,6 +48,7 @@ import FAQSection from "@/components/faq/FAQSection";
 // import Partners from "@/components/homepage/Partners";
 import { products, Product } from "@/lib/data/products";
 import FAQComponent from "@/components/faq/FAQComponent";
+import Wrapper from "@/components/layout/Wrapper";
 
 type Props = { params: Promise<{ category: string; product: string }> };
 
@@ -74,7 +75,8 @@ export default async function ProductPage({ params }: Props) {
   return (
     <div>
 
-      <div className="mt-20 px-6 lg:px-20 py-10">
+      <Wrapper>
+        <div className="mt-20 py-10">
         <CategoryHeader
           title={`Sell your ${categoryName}`}
           description={`You selected ${product.name}`}
@@ -83,6 +85,7 @@ export default async function ProductPage({ params }: Props) {
         <ModelCard product={product} />
         <QuestionFlow product={product} />
       </div>
+      </Wrapper>
       <FAQComponent brand={lowerCategory} title={`${categoryName} FAQs`} />
 
     </div>

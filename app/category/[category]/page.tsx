@@ -80,6 +80,8 @@ import CategoryHeader from "@/components/product/CategoryHeader";
 import ProductGrid from "@/components/product/ProductGrid";
 import { products } from "@/lib/data/products";
 import FAQComponent from "@/components/faq/FAQComponent";
+import TopCompanies from "@/components/homepage/TopCompanies";
+import Wrapper from "@/components/layout/Wrapper";
 
 type Props = {
   params: Promise<{ category: string }>;
@@ -98,7 +100,8 @@ export default async function CategoryPage({ params }: Props) {
 
   return (
     <div>
-      <div className="mt-20 px-6 lg:px-20 py-10">
+      <Wrapper>
+        <div className="mt-20 py-10">
         <CategoryHeader
           title={`Sell your ${lowerCategory.toUpperCase()}`}
           description={`Choose your ${lowerCategory} model to get an instant quote.`}
@@ -112,7 +115,9 @@ export default async function CategoryPage({ params }: Props) {
 
         
       </div>
+      </Wrapper>
       <FAQComponent brand={lowerCategory} title={`${lowerCategory.toUpperCase()} FAQs`} />
+      <TopCompanies />
     </div>
   );
 }

@@ -21,7 +21,7 @@ export default function FAQComponent({
   brand,
   title = "FAQs",
   backgroundColor = "#0B2466",
-  accentColor = "#dbeafe"
+  accentColor = "#E7EBF4"
 }: FAQComponentProps) {
   const [openIndex, setOpenIndex] = useState<number>(0);
 
@@ -42,17 +42,17 @@ export default function FAQComponent({
 
   return (
     <div 
-      className="min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8"
+      className="flex items-center justify-center py-14"
       style={{ backgroundColor }}
     >
-      <div className="w-full max-w-5xl">
+      <div className="w-full max-w-7xl mx-auto px-10">
         <h1 className="text-white text-3xl sm:text-4xl font-bold text-center mb-6 sm:mb-8">
           {title}
         </h1>
         
         {/* Shared background container */}
         <div 
-          className="rounded-lg p-4 sm:p-6 space-y-2"
+          className="rounded-lg space-y-2"
           style={{ backgroundColor: accentColor }}
         >
           {faqs.map((faq, index) => (
@@ -62,7 +62,7 @@ export default function FAQComponent({
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full py-4 flex items-start justify-between gap-4 text-left hover:opacity-90 transition-opacity"
+                className="w-full py-4 px-8 flex items-start justify-between gap-4 text-left hover:opacity-90 transition-opacity"
               >
                 <div className="flex items-start gap-3 flex-1 min-w-0">
                   <span className="text-gray-700 font-medium text-base sm:text-lg shrink-0">
@@ -81,7 +81,7 @@ export default function FAQComponent({
               
               {openIndex === index && (
                 <div className="pb-4 sm:pb-5 bg-white">
-                  <div className="pl-8 text-gray-700 text-sm sm:text-base leading-relaxed">
+                  <div className="pl-8 pt-4 text-gray-700 text-sm sm:text-base leading-relaxed">
                     {typeof faq.answer === 'string' ? (
                       <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
                     ) : (

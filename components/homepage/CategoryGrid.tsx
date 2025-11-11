@@ -100,7 +100,7 @@ function CategoryCard({ cat }: { cat: { slug: string; name: string; image: strin
   return (
     <Link
       href={`/category/${cat.slug}`}
-      className="group flex flex-col items-center justify-center rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 bg-white border border-gray-200"
+      className="group flex flex-col items-center justify-center rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 bg-white border border-gray-200"
     >
       {/* ----- Fixed-size square image (all cards same size) ----- */}
       <div className="flex items-center justify-center relative w-55 h-44 md:h-62 lg:h-70 mt-4">

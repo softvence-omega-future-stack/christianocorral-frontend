@@ -5,6 +5,8 @@ import { products } from "@/lib/data/products";
 import { useParams } from "next/navigation";
 import CategoryHeader from "@/components/product/CategoryHeader";
 import FAQComponent from "@/components/faq/FAQComponent";
+import TopCompanies from "@/components/homepage/TopCompanies";
+import Wrapper from "@/components/layout/Wrapper";
 
 export default function BrandPage() {
   const params = useParams();
@@ -19,21 +21,22 @@ export default function BrandPage() {
 
   return (
     <div>
-          <div className="mt-20 px-6 lg:px-20 py-10">
-            <CategoryHeader
-              title={`Sell your ${brand.toUpperCase()}`}
-              description={`Choose your ${brand} model to get an instant quote.`}
-            />
+      <Wrapper>
+        <div className="mt-20 py-10">
+        <CategoryHeader
+          title={`Sell your ${brand.toUpperCase()}`}
+          description={`Choose your ${brand} model to get an instant quote.`}
+        />
 
-            {brandProducts.length ? (
-              <ProductGrid products={brandProducts} />
-            ) : (
-              <p className="text-center text-gray-500">No products found.</p>
-            )}
-
-          </div>
-            <FAQComponent brand={brand} title={`${brand.toUpperCase()} FAQs`} />
-        </div>
-    
+        {brandProducts.length ? (
+          <ProductGrid products={brandProducts} />
+        ) : (
+          <p className="text-center text-gray-500">No products found.</p>
+        )}
+      </div>
+      </Wrapper>
+      <FAQComponent brand={brand} title={`${brand.toUpperCase()} FAQs`} />
+      <TopCompanies />
+    </div>
   );
 }
