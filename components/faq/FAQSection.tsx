@@ -201,15 +201,13 @@ export default function FAQPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-blue-100 to-blue-200 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <svg className="w-full h-full" viewBox="0 0 400 300">
-            <circle cx="350" cy="50" r="120" fill="currentColor" className="text-blue-300" />
-            <circle cx="380" cy="80" r="80" fill="currentColor" className="text-blue-400" />
-          </svg>
-        </div>
+      <div className="relative overflow-hidden"
+      style={
+        {backgroundImage: 'url(/faq/faqbg.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center'}
+      }
+      >
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           <div className="max-w-5xl">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">

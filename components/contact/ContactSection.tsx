@@ -9,7 +9,7 @@ export default function ContactSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
         {/* Left Side - Contact Info */}
-        <div className="flex flex-col justify-between bg-gray-50 rounded-2xl p-6 h-full">
+        <div className="flex flex-col justify-between bg-gray-50 rounded-2xl p-6 h-full border border-gray-200">
           <div className="space-y-6">
             <p className="text-gray-600">
               Have questions, suggestions, or want to sell your Apple device?  
@@ -47,7 +47,7 @@ export default function ContactSection() {
 
         {/* Right Side - Contact Form */}
         <div className="flex flex-col h-full">
-          <form className="bg-white shadow-lg rounded-2xl p-6 space-y-4 flex flex-col justify-between h-full">
+          <form className="bg-white border border-gray-200 rounded-2xl p-6 space-y-4 flex flex-col justify-between h-full">
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium mb-1">Name</label>

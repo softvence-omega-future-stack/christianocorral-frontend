@@ -23,7 +23,7 @@ export default function FAQComponent({
   backgroundColor = "#0B2466",
   accentColor = "#E7EBF4"
 }: FAQComponentProps) {
-  const [openIndex, setOpenIndex] = useState<number>(0);
+  const [openIndex, setOpenIndex] = useState<number | undefined>(undefined);
 
   const getFAQData = (brandName: string): FAQItem[] => {
     const normalizedBrand = brandName.toLowerCase().trim();
@@ -62,13 +62,13 @@ export default function FAQComponent({
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full py-4 px-8 flex items-start justify-between gap-4 text-left hover:opacity-90 transition-opacity"
+                className="w-full sm:py-4 p-3 sm:px-8 flex items-start justify-between gap-4 text-left hover:opacity-90 transition-opacity"
               >
                 <div className="flex items-start gap-3 flex-1 min-w-0">
                   <span className="text-gray-700 font-medium text-base sm:text-lg shrink-0">
                     {index + 1}.
                   </span>
-                  <span className="text-gray-800 font-medium text-base sm:text-lg break-words">
+                  <span className="text-gray-800 font-medium text-base sm:text-lg wpap-break-words">
                     {faq.question}
                   </span>
                 </div>

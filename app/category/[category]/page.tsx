@@ -73,8 +73,6 @@
 //   );
 // }
 
-
-
 import { notFound } from "next/navigation";
 import CategoryHeader from "@/components/product/CategoryHeader";
 import ProductGrid from "@/components/product/ProductGrid";
@@ -102,21 +100,28 @@ export default async function CategoryPage({ params }: Props) {
     <div>
       <Wrapper>
         <div className="mt-20 py-10">
-        <CategoryHeader
-          title={`Sell your ${lowerCategory.toUpperCase()}`}
-          description={`Choose your ${lowerCategory} model to get an instant quote.`}
-        />
+          <CategoryHeader
+            title={`Sell your ${lowerCategory
+              .replace(/_/g, " ")
+              .toUpperCase()}`}
+            description={`Choose your ${lowerCategory.replace(
+              /_/g,
+              " "
+            )} model to get an instant quote.`}
+          />
 
-        {categoryProducts.length ? (
-          <ProductGrid products={categoryProducts} />
-        ) : (
-          <p className="text-center text-gray-500">No products found.</p>
-        )}
-
-        
-      </div>
+          {categoryProducts.length ? (
+            <ProductGrid products={categoryProducts} />
+          ) : (
+            <p className="text-center text-gray-500">No products found.</p>
+          )}
+        </div>
       </Wrapper>
-      <FAQComponent brand={lowerCategory} title={`${lowerCategory.toUpperCase()} FAQs`} />
+      <FAQComponent
+        brand={lowerCategory}
+        title={`${lowerCategory.replace(/_/g, " ").toUpperCase()} FAQs`}
+      />
+
       <TopCompanies />
     </div>
   );
