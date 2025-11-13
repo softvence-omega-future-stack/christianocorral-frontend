@@ -1,6 +1,6 @@
 type CategoryHeaderProps = {
   title: string;
-  description: string;
+  description?: string;
 };
 
 export default function CategoryHeader({ title, description }: CategoryHeaderProps) {

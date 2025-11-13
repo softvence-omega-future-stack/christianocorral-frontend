@@ -6,6 +6,8 @@ import ModelCard from "@/components/productDetails/ModelCard";
 import QuestionFlow from "@/components/productDetails/QuestionFlow";
 import { products } from "@/lib/data/products";
 import { useParams } from "next/navigation";
+import Wrapper from "@/components/layout/Wrapper";
+import CategoryHeader from "@/components/product/CategoryHeader";
 
 export default function ProductPage() {
   const params = useParams();
@@ -33,17 +35,20 @@ export default function ProductPage() {
   }
 
   return (
-    <div className="min-h-screen">
-      <div className="mt-20 py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold mb-4">
-          Sell your {brand} {product.name}
-        </h1>
+    <div className="">
+      <Wrapper>
+        <div className="mt-20 py-10">
+        <CategoryHeader
+          title={`Sell your ${brand} ${product.name}`}
+        />
 
         <ModelCard product={product} />
         <QuestionFlow product={product} />
       </div>
+      </Wrapper>
       <FAQComponent brand={brand} title={`${brand.toUpperCase()} FAQs`} />
       <TopCompanies />
     </div>
+    
   );
 }

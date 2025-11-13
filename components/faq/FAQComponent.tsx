@@ -45,8 +45,8 @@ export default function FAQComponent({
       className="flex items-center justify-center py-14"
       style={{ backgroundColor }}
     >
-      <div className="w-full max-w-7xl mx-auto px-10">
-        <h1 className="text-white text-3xl sm:text-4xl font-bold text-center mb-6 sm:mb-8">
+      <div className="w-full max-w-7xl mx-auto space-y-8 px-2 sm:px-6 lg:px-8">
+        <h1 className="text-white text-lg sm:text-2xl font-bold text-center mb-6 sm:mb-8">
           {title}
         </h1>
         
@@ -68,7 +68,7 @@ export default function FAQComponent({
                   <span className="text-gray-700 font-medium text-base sm:text-lg shrink-0">
                     {index + 1}.
                   </span>
-                  <span className="text-gray-800 font-medium text-base sm:text-lg wpap-break-words">
+                  <span className="text-gray-800 font-medium text-sm sm:text-lg wpap-break-words">
                     {faq.question}
                   </span>
                 </div>
