@@ -50,7 +50,7 @@ export default function Navbar() {
           {/* Sell Dropdown (Click-based) */}
           <div className="relative" ref={sellRef}>
             <button
-              className="hover:scale-[1.2] transition"
+              className="hover:scale-[1.2] transition cursor-pointer"
               onClick={() => setSellOpen((prev) => !prev)}
             >
               Sell
@@ -81,11 +81,11 @@ export default function Navbar() {
           </Link>
 
           <Link
-            href="/cart"
+            href="/basket"
             className="flex items-center gap-1 hover:scale-[1.2] transition"
           >
             <ShoppingCart size={20} />
-            Cart
+            Basket
           </Link>
 
           <Link

@@ -9,9 +9,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Contact Section */}
           <div className="flex flex-col">
-            <div className="mb-8">
+            <Link href="/" className="mb-8">
               <Image src="/footer.svg" alt="Logo" width={120} height={40} className="h-10 w-auto" />
-            </div>
+            </Link>
 
             <h3 className="font-semibold text-gray-900 mb-3 text-sm">Contact</h3>
             <div className="flex items-center gap-2 text-gray-700 text-sm mb-6">

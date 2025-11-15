@@ -47,11 +47,11 @@ export default function FAQComponent({
     >
       <div className="w-full max-w-7xl mx-auto space-y-8 px-2 sm:px-6 lg:px-8">
         <h1 className="text-white text-lg sm:text-2xl font-bold text-center mb-6 sm:mb-8">
-          {title}
+          {title.replace(/_/g, " ")}
         </h1>
         
         {/* Shared background container */}
-        <div 
+        <div
           className="rounded-lg space-y-2"
           style={{ backgroundColor: accentColor }}
         >
