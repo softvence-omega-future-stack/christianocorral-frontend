@@ -317,7 +317,7 @@ export default function CheckoutFlow({
                       className="px-4 py-2 border border-gray-300 rounded text-sm bg-white text-black"
                     />
                     <input
-                      type="number"
+                      type="text"
                       placeholder="Phone"
                       className="px-4 py-2 border border-gray-300 rounded text-sm bg-white text-black"
                     />
@@ -692,76 +692,75 @@ export default function CheckoutFlow({
                     </p>
 
                     <div className="space-y-2 mb-4">
-  {/* Terms accepted */}
-  <label className="flex items-start gap-3 cursor-pointer">
-    <span className="relative">
-      <input
-        type="checkbox"
-        checked={termsAccepted}
-        onChange={() => setTermsAccepted(!termsAccepted)}
-        className="peer w-4 h-4 appearance-none border border-gray-400 rounded-sm checked:bg-blue-900 checked:border-blue-900"
-      />
+                      {/* Terms accepted */}
+                      <label className="flex items-start gap-3 cursor-pointer">
+                        <span className="relative">
+                          <input
+                            type="checkbox"
+                            checked={termsAccepted}
+                            onChange={() => setTermsAccepted(!termsAccepted)}
+                            className="peer w-4 h-4 appearance-none border border-gray-400 rounded-sm checked:bg-blue-900 checked:border-blue-900"
+                          />
 
-      {termsAccepted && (
-        <span className="pointer-events-none absolute inset-0 flex items-center justify-center text-white text-sm">
-          ✓
-        </span>
-      )}
-    </span>
+                          {termsAccepted && (
+                            <span className="pointer-events-none absolute inset-0 flex items-center justify-center text-white text-sm">
+                              ✓
+                            </span>
+                          )}
+                        </span>
 
-    <span className="text-sm text-gray-700">
-      I accept the terms and conditions
-    </span>
-  </label>
+                        <span className="text-sm text-gray-700">
+                          I accept the terms and conditions
+                        </span>
+                      </label>
 
-  {/* Subscribe to email offers */}
-  <label className="flex items-start gap-3 cursor-pointer">
-    <span className="relative">
-      <input
-        type="checkbox"
-        checked={emailOffers}
-        onChange={() => setEmailOffers(!emailOffers)}
-        className="peer w-4 h-4 appearance-none border border-gray-400 rounded-sm checked:bg-blue-900 checked:border-blue-900"
-      />
+                      {/* Subscribe to email offers */}
+                      <label className="flex items-start gap-3 cursor-pointer">
+                        <span className="relative">
+                          <input
+                            type="checkbox"
+                            checked={emailOffers}
+                            onChange={() => setEmailOffers(!emailOffers)}
+                            className="peer w-4 h-4 appearance-none border border-gray-400 rounded-sm checked:bg-blue-900 checked:border-blue-900"
+                          />
 
-      {emailOffers && (
-        <span className="pointer-events-none absolute inset-0 flex items-center justify-center text-white text-sm">
-          ✓
-        </span>
-      )}
-    </span>
+                          {emailOffers && (
+                            <span className="pointer-events-none absolute inset-0 flex items-center justify-center text-white text-sm">
+                              ✓
+                            </span>
+                          )}
+                        </span>
 
-    <span className="text-sm text-gray-700">
-      Subscribe to special email only offers
-    </span>
-  </label>
+                        <span className="text-sm text-gray-700">
+                          Subscribe to special email only offers
+                        </span>
+                      </label>
 
-  {/* Text updates */}
-  <label className="flex items-start gap-3 cursor-pointer">
-    <span className="relative">
-      <input
-        type="checkbox"
-        checked={textUpdates}
-        onChange={() => setTextUpdates(!textUpdates)}
-        className="peer w-4 h-4 appearance-none border border-gray-400 rounded-sm checked:bg-blue-900 checked:border-blue-900"
-      />
+                      {/* Text updates */}
+                      <label className="flex items-start gap-3 cursor-pointer">
+                        <span className="relative">
+                          <input
+                            type="checkbox"
+                            checked={textUpdates}
+                            onChange={() => setTextUpdates(!textUpdates)}
+                            className="peer w-4 h-4 appearance-none border border-gray-400 rounded-sm checked:bg-blue-900 checked:border-blue-900"
+                          />
 
-      {textUpdates && (
-        <span className="pointer-events-none absolute inset-0 flex items-center justify-center text-white text-sm">
-          ✓
-        </span>
-      )}
-    </span>
+                          {textUpdates && (
+                            <span className="pointer-events-none absolute inset-0 flex items-center justify-center text-white text-sm">
+                              ✓
+                            </span>
+                          )}
+                        </span>
 
-    <span className="text-sm text-gray-700">
-      Text me updates about my trade-in at{" "}
-      <a href="tel:+15556789100" className="text-blue-600">
-        +1(555) 678 9100
-      </a>
-    </span>
-  </label>
-</div>
-
+                        <span className="text-sm text-gray-700">
+                          Text me updates about my trade-in at{" "}
+                          <a href="tel:+15556789100" className="text-blue-600">
+                            +1(555) 678 9100
+                          </a>
+                        </span>
+                      </label>
+                    </div>
 
                     <p className="text-xs text-gray-600 mb-4">
                       By checking this box, you consent to receive SMS updates
